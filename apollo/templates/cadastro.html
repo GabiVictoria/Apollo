@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/livro.svg" type="image/x-icon" >
+    <title>Apollo</title>
+</head>
+<body class="bcadastro">
+    <section class="lateral">
+        <img class="logo_cad" src="assets/apolinho.svg" alt="Galáxia com um livro e uma pena">
+        <button class="entrar_cad">Entrar</button>
+    </section>
+   <section class="cadastro">
+    <form method="post">
+        <h2>Bem vindo ao Apollo !</h2>
+        <div class="inputinho">
+            <label for="input" class="text">Nome:</label>
+            <input type="text" placeholder="Digite seu nome aqui..." name="input" class="input" required>
+
+            <label for="input" class="text">Email:</label>
+            <input type="email" placeholder="Digite seu email aqui..." name="input" class="input" required>
+    
+            <label for="input" class="text">Senha:</label>
+            <input type="password" placeholder="Digite sua senha aqui..." name="input" class="input" required>
+
+            <label for="input" class="text">Data de Nascimento:</label>
+            <input type="date" placeholder="Digite sua data de nascimento" name="input" class="input" required>
+
+            <label for="language">Idioma:</label>
+            <select id="language" name="language" required>
+              <option value="" disabled selected>Selecione uma opção...</option>
+              <option value="portugues">Português</option>
+              <option value="ingles">Inglês</option>
+              <option value="espanhol">Espanhol</option>
+            </select>
+        </div>
+    
+        <button class="cadastrar">Cadastrar</button>
+    </form>
+   </section>
+</body>
+</html>
