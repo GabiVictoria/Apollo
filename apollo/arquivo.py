@@ -18,3 +18,11 @@ def obter_usuario(con):
         usuarios.append(registro)
 
     return usuarios
+
+def salvar_texto(con,descricao,texto, data_criacao,status,titulo):
+    cursor = con.cursor()
+    sql = "INSERT INTO historia (descricao,texto, data_criacao,status,titulo) VALUES (%s, %s, %s, %s, %s)"
+    cursor.execute(sql, (descricao,texto, data_criacao,status,titulo))
+
+    con.commit() 
+    cursor.close()

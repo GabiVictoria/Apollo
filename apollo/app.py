@@ -34,7 +34,20 @@ def entrar():
     if contem: 
         return render_template ("home.html")
     else: 
-        return render_template ("cadastro.html")
+        erro = "Email ou senha incorretos!"
+        return render_template ("login.html", erro=erro)
+    
+@app.route('/salvar_historia', methods=['POST'])
+def salvar_historia():
+    texto_formatado = request.form['area1']
+    print(texto_formatado)
+    descricao = request.form['descricao'].strip()
+    texto = request.form['area1'].strip()
+    data_criacao = request.form['data_criacao'].strip()
+    status = request.form['status'].strip()
+    titulo = request.form['titulo'].strip()
+    salvar_texto(con,descricao,texto, data_criacao,status,titulo)
+    return render_template("home.html")
 
 @app.route('/')
 def login():
@@ -49,3 +62,6 @@ def cadastro():
 def home():
     return render_template('home.html')
 
+@app.route('/criar_historia')
+def criar_historia():
+    return render_template('historia.html')

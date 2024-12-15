@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo</title>
+    <link rel="stylesheet" href="static/css/home.css">
+  <script type="text/javascript" src="nicEdit-latest.js"></script>
+  <script type="text/javascript">
+//<![CDATA[
+  bkLib.onDomLoaded(function() {
+        new nicEditor({maxHeight : 200}).panelInstance('area');
+        new nicEditor({fullPanel : true,maxHeight : 200}).panelInstance('area1');
+  });
+  //]]>
+  </script>
+</head>
+<body>
+
+   
+    <aside class="sidebar">
+            
+        <nav>
+            <ul>
+                <li><a href="#" title="Menu"><img src="static/assets/menu.png" alt="Menu" class="icon"><span class="text">Menu</span></a></li>
+                <li><a href="#" title="Perfil"><img src="static/assets/perfil.png" alt="Perfil" id="perfil" class="icon"><span class="text">Perfil</span></a></li>
+                <li><a href="home" title="Tela inicial"><img src="static/assets/home.png" alt="Tela inicial" class="icon"><span class="text">Tela inicial</span></a></li>
+                <li><a href="criar_historia" title="Criar História"><img src="static/assets/criar.png" alt="história" class="icon"><span class="text">Criar História</span></a></li>
+                <li><a href="#" title="Solicitações"><img src="static/assets/sol.png" alt="Solicitações" class="icon"><span class="text">Solicitações</span></a></li>
+                <li><a href="#" title="Meus livros"><img src="static/assets/livro.png" alt="Meus livros" class="icon"><span class="text">Meus livros</span></a></li>
+                <li><a href="#" title="Colaborações"><img src="static/assets/colab.png" alt="Colaborações" class="icon"><span class="text">Colaborações</span></a></li>
+                <li><a href="#" title="Salvos"><img src="static/assets/salvos.png" alt="Salvos" class="icon"><span class="text">Salvos</span></a></li>
+                <li><a href="#" title="Gêneros"><img src="static/assets/gen.png" alt="Gêneros" class="icon"><span class="text">Gêneros</span></a></li>
+                <li><a href="/" title="Sair"><img src="static/assets/sair.png" alt="Sair" class="icon"><span class="text">Sair</span></a></li>
+            </ul>
+        </nav>
+        
+</aside>
+
+<main>
+    <div class="search-bar">
+        <input type="text" placeholder="Pesquisar...">
+        <button>Pesquisar</button>
+    </div>
+  
+    <form action="/salvar_historia" method="POST" id="form_historia">
+        <div class="inputinho">
+            <label for="input" class="text">Titúlo:</label>
+            <input type="text" placeholder="Digite seu titúlo aqui..." name="titulo" class="input" required>
+
+            <label for="input" class="text">Descrição:</label>
+            <input type="text" placeholder="Digite sua descrição aqui(até 255 caracteres)..." name="descricao" class="input" required>
+            <label for="input" class="text">Data de Criação:</label>
+            <input type="date" placeholder="Digite a data do início do desenvolvimento" name="data_criacao" class="input" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+              <option value="" disabled selected>Selecione uma opção...</option>
+              <option value="em andamento">Em andamento</option>
+              <option value="concluido">Concluído</option>
+              <option value="abandonado">Abandonado</option>
+            </select>
+        </div>
+        <textarea name="area1" id="area1">Comece sua história...</textarea>
+        <button class="criar" type="submit"><span class="criar-content" >Salvar</span></button>
+    </form>
+    
+</main>
+
+
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() }); // convert all text areas to rich text editor on that page
+
+    bkLib.onDomLoaded(function() {
+         new nicEditor({fullPanel : true}).panelInstance('area2');
+    }); // convert text area with id area2 to rich text editor with full panel.
+</script>
+<script src="static/script.js"></script>
+</body>
+</html>

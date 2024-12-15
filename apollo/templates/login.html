@@ -19,7 +19,11 @@
         <input type="email" placeholder="Digite seu email aqui..." name="email" class="input" required>
 
         <label for="input" class="text">Senha:</label>
-        <input type="password" placeholder="Digite sua senha aqui..." name="senha" class="input" required>
+        <input type="password" placeholder="Digite sua senha aqui..." name="senha" class="input" id="senha" required >
+        <div class="toggle-senha" id="toggle-senha">
+            <img src="static/assets/hide.png" alt="Visualizar senha" id="icone-senha">
+            <p>Visualizar senha</p>
+        </div>
     </div>
 
    <div class="ajuda">
@@ -29,6 +33,13 @@
 
    <button class="entrar" type="submit" >Entrar</button>
 </form>
-  
+<div id="alerta" class="alerta">
+    <span id="alerta-msg"></span>
+    <!-- Se quiser um botão para fechar manualmente -->
+    <button onclick="fecharAlerta()">X</button>
+</div>
+
+<div id="erro" style="display: none;">{{ erro if erro else '' }}</div>
+<script src="static/script.js"></script>
 </body>
 </html>

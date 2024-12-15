@@ -1,3 +1,7 @@
+
+drop database apollo_bd
+create database apollo_bd
+
 use apollo_bd
 
 create table Lingua (
@@ -20,11 +24,11 @@ CREATE TABLE Usuario (
 
 
 CREATE TABLE Historia (
-    Id_historia int PRIMARY KEY,
+    Id_historia int AUTO_INCREMENT  PRIMARY KEY,
     descricao blob,
     texto blob,
     data_criacao date,
-    status boolean,
+    status varchar(255),
     titulo varchar(255)
 );
 
@@ -33,46 +37,46 @@ CREATE TABLE Comentario (
     status boolean,
     data_comentario date,
     texto varchar(255),
-    fk_Usuário_id_usuario int
+    fk_Usuario_id_usuario int
 );
 
 CREATE TABLE Bloqueia (
-    fk_Usuário_id_usuario int,
-    fk_Usuário_id_usuario_ int
+    fk_Usuario_id_usuario int,
+    fk_Usuario_id_usuario_ int
 );
 
 CREATE TABLE Segue (
-    fk_Usuário_id_usuario int,
-    fk_Usuário_id_usuario_ int
+    fk_Usuario_id_usuario int,
+    fk_Usuario_id_usuario_ int
 );
 
 CREATE TABLE Coautoria (
-    fk_Usuário_id_usuario int,
-    fk_História_Id_historia int,
+    fk_Usuario_id_usuario int,
+    fk_Historia_Id_historia int,
     percentual_colaboracao int
 );
 
 CREATE TABLE Pertence (
-    fk_Gênero_id_genero int,
-    fk_História_Id_historia int
+    fk_Genero_id_genero int,
+    fk_Historia_Id_historia int
 );
 
 CREATE TABLE Cria (
-    fk_Usuário_id_usuario int,
-    fk_História_Id_historia int
+    fk_Usuario_id_usuario int,
+    fk_Historia_Id_historia int
 );
 
 CREATE TABLE Recebe (
-    fk_História_Id_historia int,
-    fk_Comentário_id_comentario int
+    fk_Historia_Id_historia int,
+    fk_Comentario_id_comentario int
 );
  
-ALTER TABLE Usuario ADD CONSTRAINT FK_Usuário_2
+ALTER TABLE Usuario ADD CONSTRAINT FK_Usuario_2
     FOREIGN KEY (fk_Lingua_nome_lingua)
     REFERENCES Lingua (nome_lingua)
     ON DELETE CASCADE;
  
-ALTER TABLE Comentário ADD CONSTRAINT FK_Comentário_2
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_2
     FOREIGN KEY (fk_Usuario_id_usuario)
     REFERENCES Usuario (id_usuario)
     ON DELETE CASCADE;
@@ -93,12 +97,12 @@ ALTER TABLE Segue ADD CONSTRAINT FK_Segue_1
     ON DELETE CASCADE;
  
 ALTER TABLE Segue ADD CONSTRAINT FK_Segue_2
-    FOREIGN KEY (fk_Usuário_id_usuario_)
+    FOREIGN KEY (fk_Usuario_id_usuario_)
     REFERENCES Usuario (id_usuario)
     ON DELETE CASCADE;
  
 ALTER TABLE Coautoria ADD CONSTRAINT FK_Coautoria_1
-    FOREIGN KEY (fk_Usuário_id_usuario)
+    FOREIGN KEY (fk_Usuario_id_usuario)
     REFERENCES Usuario (id_usuario)
     ON DELETE SET NULL;
  
@@ -136,3 +140,14 @@ ALTER TABLE Recebe ADD CONSTRAINT FK_Recebe_2
     FOREIGN KEY (fk_Comentario_id_comentario)
     REFERENCES Comentario (id_comentario)
     ON DELETE SET NULL;
+
+INSERT INTO Lingua (nome_lingua) 
+VALUES 
+    ('portugues'),
+    ('ingles'),
+    ('espanhol');
+
+INSERT INTO usuario (data_nasc, email, id_usuario, senha, nome, fk_Lingua_nome_lingua) 
+VALUES 
+('2022-06-01', 'jack@gmail.com', '2', '0987', 'Jackes', 'ingles'),
+('2006-08-05', 'gabrielebatista@gmail.com', '1', '1234', 'Gabriele', 'portugues');

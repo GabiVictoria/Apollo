@@ -19,7 +19,7 @@ main {
 .search-bar {
     display: flex;
     width: 92.5vw;
-    margin-top: 2vh;
+    margin-top: 3vh;
 }
 
 .search-bar input {
@@ -31,6 +31,7 @@ main {
     border-top-right-radius: 0rem;
     height: 6vh;
     width: 86vw;
+    margin-bottom: 20px;
 
 }
 
@@ -122,7 +123,7 @@ main {
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 3vh;
+   
 }
 
 .carousel-track {
@@ -131,8 +132,8 @@ main {
 }
 
 .carousel-image {
-    min-width: 100%;
-    height: 100%;
+    width: 92.5vw;
+    height: 30vh;
 }
 
 .carousel-indicators {
@@ -145,8 +146,8 @@ main {
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: #ccc;
     border: none;
     border-radius: 50%;
@@ -161,43 +162,66 @@ main {
 
 
 
+
 .story {
     display: flex;
+    flex-direction: row;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     gap: 20px;
     margin-top: 20px;
+    width: 93vw;
+    max-height: 30vh;
+    transition: all 0.3s ease;
 }
 
 .story-image img {
-    width: 200px;
+    width: 100%;
     height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .story-content {
     padding: 20px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.story-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #05424d;
 }
 
 .story-content p {
-    line-height: 1.6;
-    max-width: 600px;
+    line-height: 1.5;
+    font-size: 1rem;
+    max-width: 90%;  /* Aumenta o texto para ocupar mais espaço */
+    color: #333;
 }
 
 .buttons {
     margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 .buttons .read-more,
 .buttons .collaborate {
-    padding: 10px 20px;
+    padding: 8px 16px;  /* Botões menores */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-right: 10px;
     transition: background-color 0.3s;
+    font-size: 0.9rem;  /* Texto menor nos botões */
 }
 
 .read-more {
@@ -218,31 +242,89 @@ main {
     background-color: #ccc;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 50px;
-    }
+#area1{
+    width: 92.5vw;
+    min-height: 78vh;
 
-    .sidebar:hover {
-        width: 180px;
-    }
-
-    main {
-        margin-left: 50px;
-    }
-
-    .sidebar:hover + main {
-        margin-left: 180px;
-    }
-
-    .story {
-        flex-direction: column;
-    }
-
-    .story-image img {
-        width: 100%;
-    }
 }
 
-                                    
+.criar {
+    position: relative;
+    overflow: hidden;
+    height: 1.5rem;
+    padding: 0 2rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 92.5vw; /* Adicionado para ajustar a largura */
+}
+
+.criar:hover::before {
+    transform: scaleX(1);
+}
+
+.criar-content {
+    position: relative;
+    z-index: 1;
+}
+
+.criar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+        82.3deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+}
+
+.inputinho {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    width: 92.5vw;
+  }
+  
+  .inputinho label{
+    font-size: 1rem;
+    color: #055865;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #e8e8e8;
+    width: fit-content;
+    border-radius: 0.5rem;
+  }
+  
+  .inputinho input.input {
+    padding: 11px 10px;
+    font-size: 1rem;
+    border: 2px #055865 solid;
+    border-radius: 0.75rem;
+    background: #e8e8e8;
+  }
+  
+  .inputinho input.input:focus {
+    outline: none;
+  }
+  select{
+    padding: 11px 10px;
+    font-size: 1rem;
+    border: 2px #055865 solid;
+    border-radius: 0.75rem;
+    background: #e8e8e8;
+    margin-bottom: 2vh;
+  }
