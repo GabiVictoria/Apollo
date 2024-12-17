@@ -51,21 +51,20 @@
             </div>
 
             <!-- Story Section -->
+            {% for historia in historias %}
             <section class="story">
-                <div class="story-image">
-                    <img src="static/assets/xadrez.jpeg" alt="Imagem de uma peça de xadrez">
-                </div>
+               
                 <div class="story-content">
-                    <h2>O xeque-mate secreto</h2>
-                    <p>
-                        O romance segue a trajetória de Sofia, uma jovem prodígio do xadrez que, após a morte misteriosa de seu mentor, se vê forçada a abandonar sua carreira promissora. Anos depois, ela retorna ao tabuleiro, não para competir, mas para buscar respostas sobre enigmas...
-                    </p>
+                    <h2>{{ historia.titulo }}</h2>
+                    <p>{{ historia.descricao }}</p>
                     <div class="buttons">
                         <button class="read-more">Ler mais</button>
                         <button class="collaborate">Colaborar</button>
                     </div>
                 </div>
+              
             </section>
+            {% endfor %}
         </main>
    
     <script src="static/script.js"></script>

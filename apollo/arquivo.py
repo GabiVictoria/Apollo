@@ -26,3 +26,19 @@ def salvar_texto(con,descricao,texto, data_criacao,status,titulo):
 
     con.commit() 
     cursor.close()
+
+
+def obter_textos(con):
+    cursor = con.cursor(dictionary=True)
+    cursor.execute("SELECT titulo, descricao FROM historia")
+    resultados = cursor.fetchall()
+    cursor.close()
+
+    historias = []
+    for resultado in resultados:
+        historias.append({
+            "titulo": resultado['titulo'].decode('utf-8') if isinstance(resultado['titulo'], bytes) else resultado['titulo'],
+            "descricao": resultado['descricao'].decode('utf-8') if isinstance(resultado['descricao'], bytes) else resultado['descricao'],
+        })
+    return historias
+

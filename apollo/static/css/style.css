@@ -28,7 +28,7 @@
 }
 .login form h2{
     color: #055865;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-top: 2vh;
 }
 
@@ -221,3 +221,50 @@
   background-color: #f1f1f1;
 }
 
+@media screen and (max-width: 1025px) {
+
+.login form h2{
+    font-size: 2.3rem;
+}
+.login p{
+  font-size: 1.2rem;
+}
+.ajuda a{
+  font-size: 1.2rem;
+}
+.ajuda{
+  width: 90%;
+}
+
+ .inputinho label{
+  font-size: 1.2rem;
+}
+
+.inputinho input.input {
+  font-size: 1.2rem;
+}
+
+.lateral{
+  width: 45vw;
+}
+.logo_cad{
+  width: 44vw;
+}
+.cadastro{
+  width: 55vw;
+}
+
+.cadastro form h2{
+  font-size: 2.3rem;
+}
+
+.cadastrar{
+  width: 20%;
+  height: 10%;
+}
+.entrar_cad{
+  width: 25%;
+  height: 8%;
+}
+
+}

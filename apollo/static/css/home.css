@@ -34,6 +34,9 @@ main {
     margin-bottom: 20px;
 
 }
+.search-bar ::placeholder{
+    padding-left: 5px;
+}
 
 .search-bar button {
     background-color: #006b8f;
@@ -175,6 +178,7 @@ main {
     width: 93vw;
     max-height: 30vh;
     transition: all 0.3s ease;
+
 }
 
 .story-image img {
@@ -327,4 +331,50 @@ main {
     border-radius: 0.75rem;
     background: #e8e8e8;
     margin-bottom: 2vh;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .sidebar{
+        width: 8vw;
+
+    }
+    main{
+        padding-left: 8vw;
+    }
+    .search-bar{width: 89.5vw;}
+    .carousel{width: 89.5vw}
+    .carousel-image{width: 99.9%;}
+    .story{width: 89.5vw}
+    .story-content p{
+        font-size: 1.2rem;
+    }
+    .story-content h2{
+        font-size: 1.8rem;
+    }
+    .buttons .read-more, .collaborate{
+        font-size: 1rem;
+    }
+    .search-bar input{width: 83;}
+    .search-bar button{
+      padding: 0px;
+    }
+    .inputinho{width: 89.5vw;
+ 
+}
+    .inputinho label{
+        font-size: 1.2rem;
+      }
+      
+      .inputinho input.input {
+        font-size: 1.2rem;
+      }
+      #area1{
+        width: 89.5vw;
+
+    }
+    .criar{
+        width: 89.5vw;
+
+    }
+
   }

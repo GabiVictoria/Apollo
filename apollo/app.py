@@ -49,6 +49,11 @@ def salvar_historia():
     salvar_texto(con,descricao,texto, data_criacao,status,titulo)
     return render_template("home.html")
 
+@app.route('/home', methods=['GET'])
+def obter_historias():
+    historias = obter_textos(con)  # Função para buscar as histórias do banco de dados
+    return render_template('home.html', historias=historias)
+
 @app.route('/')
 def login():
     return render_template('login.html')
@@ -58,9 +63,6 @@ def login():
 def cadastro():
     return render_template('cadastro.html')
 
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
 @app.route('/criar_historia')
 def criar_historia():

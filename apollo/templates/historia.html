@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apollo</title>
+    <link rel="shortcut icon" href="static/assets/livro.svg" type="image/x-icon">
     <link rel="stylesheet" href="static/css/home.css">
   <script type="text/javascript" src="nicEdit-latest.js"></script>
   <script type="text/javascript">
@@ -37,7 +38,7 @@
         
 </aside>
 
-<main>
+<main class="mhistoria">
     <div class="search-bar">
         <input type="text" placeholder="Pesquisar...">
         <button>Pesquisar</button>
@@ -52,7 +53,8 @@
             <input type="text" placeholder="Digite sua descrição aqui(até 255 caracteres)..." name="descricao" class="input" required>
             <label for="input" class="text">Data de Criação:</label>
             <input type="date" placeholder="Digite a data do início do desenvolvimento" name="data_criacao" class="input" required>
-
+            <label for="input" class="text">Adicionar Colaborador:</label>
+            <input type="email" placeholder="Digite o email do colaborador aqui..." name="email" class="input" required>
             <label for="status">Status:</label>
             <select id="status" name="status" required>
               <option value="" disabled selected>Selecione uma opção...</option>
@@ -60,6 +62,7 @@
               <option value="concluido">Concluído</option>
               <option value="abandonado">Abandonado</option>
             </select>
+            
         </div>
         <textarea name="area1" id="area1">Comece sua história...</textarea>
         <button class="criar" type="submit"><span class="criar-content" >Salvar</span></button>
